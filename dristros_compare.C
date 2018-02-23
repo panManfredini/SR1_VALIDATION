@@ -46,19 +46,31 @@
     p.setNameofComponent(3, "AC");
     p.setNameofComponent(4, "Wall");
     p.setNameofComponent(5, "ER");
-    p.setNameofComponent(6, "WIMP 50 GeV - 10 Events");
-    p.rebinY = 3;
+    p.setNameofComponent(6, "WIMP 50 GeV ");
+    p.rebinY = 1;
     p.rebinX = 1;
     p.doStack = true;
     p.titleY = "Entries/[PE]";
     p.titleX = "log10(cS2_bottom [PE])";
-    p.projectionMin = 3; //1.;
-    p.projectionMax =  10; //70.;
+    p.projectionMin = 1.;//2.; //1.;
+    p.projectionMax =  70.;//3.9; //70.;
     p.projectionX = false; //false;
 //    p.compareWithRatio();
     p.compare();
 
-likeHood->printEventSummary();
+    p.printModels();
+
+    likeHood->printEventSummary();
+
+    TH2F er_bkg = likeHood->getBkgComponent("hbkg")->getDefaultHisto();
+    int binMin = er_bkg.GetXaxis()->FindBin(p.projectionMin);
+    int binMax = er_bkg.GetXaxis()->FindBin(p.projectionMax);
+    er_bkg.RebinY(3);
+    er_bkg.Scale(337./er_bkg.Integral());
+    TH1D* pr_bkg = er_bkg.ProjectionY("_px",binMin, binMax);
+    pr_bkg->SetLineColor(4);
+    pr_bkg->SetLineWidth(3);
+    pr_bkg->Draw("hist same");    
 
 /*
     TH2F bkg = likeHood->bkg_components[0]->getInterpolatedHisto();

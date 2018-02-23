@@ -7,7 +7,8 @@
     gROOT->ProcessLine(".L ../SR1/StatisticalAnalyses/xephyr_sr1_likelihood/src/likelihoodDef.cxx");
 
 //    pdfLikelihood *likeHood = getTheLikelihoodToFit(10, 50, 0, 1);
-    CombinedProfileLikelihood* likeHood = getTheCombinedLikelihood(10,50,1);
+    //CombinedProfileLikelihood* likeHood = getTheCombinedLikelihood(10,50,1);
+    pdfLikelihood *likeHood = getTheLikelihoodToFit("sr1",0, 50, 0, 1);
 /*
     TString inputDir = "../RESULTS/GENtrees/";
     TString data_filename = "alternate_M50_mu100_G1.root";
@@ -27,26 +28,26 @@
    // likeHood.setCalibrationData(calibration);
 
     TCanvas *c1 = new TCanvas();
-    c1->Print("like_scan_py.pdf[");
+    c1->Print("./Eth_parameter/like_scan_eth.pdf[");
 
- //   for(int i=72; i < 82; i++){
+    for(int i=0; i < 10; i++){
 
     likeHood->setPrintLevel(INFO);
-    likeHood->setTreeIndex(75);
-    likeHood->getPOI()->setCurrentValue(1.);
-    likeHood->maximize(true);
+    likeHood->setTreeIndex(i);
+    //likeHood->getPOI()->setCurrentValue(0.);
+    //likeHood->maximize(true);
     likeHood->setPrintLevel(ERROR);
     
     //likeHood.POI->setMinimum(0.);
     //likeHood.POI->setMaximum(50);
-    LKParameter* par = likeHood->getParameter(1);
-    par->setMinimum(-2);
-    par->setMaximum(2);
+    LKParameter* par = likeHood->getParameter(6);
+    //par->setMinimum(-2);
+    //par->setMaximum(2);
     
-    likeHood->getParameter(2)->setType(FIXED_PARAMETER);
-    likeHood->getParameter(2)->setCurrentValue(1.5);
+    //likeHood->getParameter(2)->setType(FIXED_PARAMETER);
+    //likeHood->getParameter(2)->setCurrentValue(1.5);
 
-    TGraph *likeScan = likeHood->getLikelihoodScanOfParameter(10,par, 1.);
+    TGraph *likeScan = likeHood->getLikelihoodScanOfParameter(10,par, 0.);
     likeScan->SetLineWidth(3);
     likeScan->SetLineColor(4);
     likeScan->SetTitle("signal events = 0");
@@ -72,9 +73,9 @@
     }
  */    
     gPad->BuildLegend();
-    c1->Print("like_scan_py.pdf[");
+    c1->Print("./Eth_parameter/like_scan_eth.pdf[");
 
-//    }
+    }
 
-    c1->Print("like_scan_py.pdf]");
+    c1->Print("./Eth_parameter/like_scan_eth.pdf]");
 }

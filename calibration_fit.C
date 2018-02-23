@@ -21,19 +21,28 @@
     p.setNameofComponent(1, "AC");
     p.setNameofComponent(2, "ER");
     p.setNameofComponent(3, "WIMP 50 GeV - 10 Events");
-    p.rebinY = 1;
+    p.rebinY = 2;
     p.rebinX = 3;
     p.doStack = true;
     p.titleY = "Entries/[PE]";
     p.titleX = "log10(cS2_bottom [PE])";
-    p.projectionMin = 1.7; //1.;
-    p.projectionMax =  3.9; //70.;
-    p.projectionX = true; //false;
+    p.projectionMin = 1.;
+    p.projectionMax = 70.;
+    p.projectionX = false; //false;
 //    p.compareWithRatio();
     p.compare();
 
    likeHood->printEventSummary(); 
 
+    TH2F er_bkg = likeHood->getBkgComponent("hbkg")->getDefaultHisto();
+    int binMin = er_bkg.GetXaxis()->FindBin(p.projectionMin);
+    int binMax = er_bkg.GetXaxis()->FindBin(p.projectionMax);
+    er_bkg.RebinY(2);
+    er_bkg.Scale(5625./er_bkg.Integral());
+    TH1D* pr_bkg = er_bkg.ProjectionY("_px",binMin, binMax);
+    pr_bkg->SetLineColor(4);
+    pr_bkg->SetLineWidth(3);
+    pr_bkg->Draw("hist same");    
 
 }
 

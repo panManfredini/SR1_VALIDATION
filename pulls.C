@@ -1,7 +1,7 @@
 {
 
-    TString mu = "2";
-    bool isUncond = false;
+    TString mu = "1";
+    bool isUncond = true;
 
     gStyle->SetOptStat(0);
     
@@ -13,7 +13,7 @@
 
     TString inputDir = "../build/RESULTS/FITtrees/";
 //    TString filename = "post_fit_sr1_M50_mu100_G2.root"; 
-    TString filename = "post_fit_sr1_M50.root";
+    TString filename = "post_fit_sr1_eth.root";
     TString treeName = "post_fit_tree";
 
 
@@ -24,12 +24,12 @@
    TGraphErrors band2(20);
     for (int i=0; i < 20; i++) { band.SetPoint(i,i,0); band.SetPointError(i, 0,1); band2.SetPoint(i,i,0); band2.SetPointError(i, 0,0); }
 
-    TGraphAsymmErrors pull_mu = plotHelpers::pulls(tree, "./pulls/", "alt_1_" + mu, "mu_fit=="+mu,  isUncond );
+    TGraphAsymmErrors pull_mu = plotHelpers::pulls(tree, "./pulls/", "eth_1_" + mu, "mu_fit=="+mu,  isUncond );
 
     gPad->SetBottomMargin(0.25);
     
     pull_mu.SetMarkerStyle(20);
-    if(isUncond) pull_mu.SetTitle("#mu_{true} = 2 Hypo Unconditional fit ");
+    if(isUncond) pull_mu.SetTitle("#mu_{true} = 1 Hypo Unconditional fit ");
     else pull_mu.SetTitle("#mu_{true} = 2 Conditional fit #mu="+mu +" events");
     //pull_mu.SetMinimum(-0.5);
     //pull_mu.SetMaximum(0.5);

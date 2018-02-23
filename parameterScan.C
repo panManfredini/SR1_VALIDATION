@@ -7,7 +7,7 @@
     gROOT->ProcessLine(".L ../SR1/StatisticalAnalyses/xephyr_sr1_likelihood/src/likelihoodDef.cxx");
 
 //    pdfLikelihood *likeHood = getTheLikelihoodToFit(10, 50, 0, 1);
-      pdfLikelihood *likeHood = getTheCombinedLikelihood(10, 50, 1);
+      pdfLikelihood *likeHood = getTheLikelihoodToFit("sr1",0, 50, 0, 1);
 
     /*
     TString inputDir = "../RESULTS/GENtrees/";
@@ -25,17 +25,26 @@
     */
     
     likeHood->getPOI()->setMinimum(0.);
-    likeHood->getPOI()->setMaximum(50);
+    likeHood->getPOI()->setMaximum(10);
 
     vector<TGraph*> likeScan = likeHood->getGraphOfParameters(10);
+
+    // File of pulls for parameter variance
+    TFile *f = TFile::Open("pulls/eth_1_1_pulls.root");
+    TGraphAsymmErrors *variances = (TGraphAsymmErrors*)f->Get("eth_1_1_pulls");
 
     TCanvas *c1 = new TCanvas();
     c1->Print("parascan.pdf[");
     for(unsigned int i=0; i < likeScan.size(); i++){
 	    likeScan[i]->SetLineWidth(3);
 	    likeScan[i]->SetLineColor(4);
-	    likeScan[i]->Draw("AC*");
-    	    c1->Print("parascan.pdf[");
+        
+        // renormalizing in terms of parameter sigma
+        for(int j=0; j < likeScan[i]->GetN(); j++) likeScan[i]->GetY()[j] *= 1. / variances->GetErrorYhigh(i) ;
+	    
+        likeScan[i]->Draw("AC*");
+        c1->SetLeftMargin(0.3);
+    	c1->Print("parascan.pdf[");
     }
 
     c1->Print("parascan.pdf]");

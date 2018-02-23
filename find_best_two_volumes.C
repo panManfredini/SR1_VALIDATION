@@ -9,7 +9,7 @@
 //    CombinedProfileLikelihood *likeHood = getTheCombinedLikelihood(10, 50, 1) ; // getTheLikelihoodToFit(10, 50, 0, 1); 
     pdfLikelihood *likeHood =  getTheLikelihoodToFit(10, 50, 0, 1); 
 
- //   likeHood->setWithSafeGuard(false);
+   likeHood->setWithSafeGuard(false);
    likeHood->initialize();
  
 //    likeHood->setPrintLevel(DEBUG);
