@@ -21,8 +21,8 @@
     likeHood.setCalibrationData(calibration);
     
    // likeHood.POI->setMinimum(0.);
-    //likeHood.POI->setMaximum(40);
-    TGraph *likeScan = likeHood.getGraphOfLogLikelihood(100);
+    likeHood.POI->setMaximum(5);
+    TGraph *likeScan = likeHood.getGraphOfLogLikelihood(10);
 
     likeScan->SetLineWidth(3);
     likeScan->SetLineColor(4);

@@ -7,7 +7,7 @@
     gROOT->ProcessLine(".L ../SR1/StatisticalAnalyses/xephyr_sr1_likelihood/src/likelihoodDef.cxx");
 
 //    pdfLikelihood *likeHood = getTheLikelihoodToFit(10, 50, 0, 1);
-      pdfLikelihood *likeHood = getTheLikelihoodToFit("sr1",0, 50, 0, 1);
+      pdfLikelihood *likeHood = getTheLikelihoodToFit("sr1",0, 10, 0, 1);
 
     /*
     TString inputDir = "../RESULTS/GENtrees/";
@@ -26,6 +26,7 @@
     
     likeHood->getPOI()->setMinimum(0.);
     likeHood->getPOI()->setMaximum(10);
+    likeHood->setTreeIndex(4);
 
     vector<TGraph*> likeScan = likeHood->getGraphOfParameters(10);
 
@@ -41,10 +42,13 @@
         
         // renormalizing in terms of parameter sigma
         for(int j=0; j < likeScan[i]->GetN(); j++) likeScan[i]->GetY()[j] *= 1. / variances->GetErrorYhigh(i) ;
-	    
+	 
         likeScan[i]->Draw("AC*");
         c1->SetLeftMargin(0.3);
     	c1->Print("parascan.pdf[");
+	
+	cout << likeScan[i]->GetYaxis()->GetTitle() << "  " << TString::Format("%1.10f",likeScan[i]->GetHistogram()->GetMaximum() - likeScan[i]->GetHistogram()->GetMinimum()) << endl;
+
     }
 
     c1->Print("parascan.pdf]");

@@ -6,62 +6,39 @@
     gInterpreter->AddIncludePath("../Xephyr/src"); // in this case is just XEPHYR src from next dir.
     gROOT->ProcessLine(".L ../SR1/StatisticalAnalyses/xephyr_sr1_likelihood/src/likelihoodDef.cxx");
 
-    pdfLikelihood *likeHood = getTheLikelihoodByType(50., 0);
-	    //getTheLikelihoodToFit(100, 50, 1, 1); //getTheLikelihood_SR1_outer(50.); // 50. GeV mass
+    pdfLikelihood *likeHood = getDMLikelihood(50., 0);
+//    CombinedProfileLikelihood *likeHood = getDMCombinedLikelihood(50.);
+    likeHood->getPOI()->setCurrentValue(10.);
 
-    TString inputDir = "/home/pan/work/XEPHYR_PKG/SR1/StatisticalAnalyses/inputs_for_likelihood/lax_1.2.3/data/";
-    TString data_filename = "xephyr_none_SR1_pax6.8.0_hax2.1.1_lax1.2.3_cs1LT200.root" ;
-//    TString data_filename = "xephyr_none_SR1_pax6.8.0_hax2.4.0_lax1.4.0_cs1LT200_fv1_cuts1.root";
 
-    TString data_treeName = "tree_inner";
-    TString calibration_filename = "null_G1_Cal.root";
-    TString calibration_treeName = "null_G1_Cal0";
-
-  /*  TString inputDir = "lax_1.2.3/data/"; 
-   
-    TString data_filename = "xephyr_none_SR1_pax6.8.0_hax2.1.1_lax1.2.3_cs1LT200.root";
-    TString data_treeName = "tree_inner";
-    TString calibration_filename = "null_e001_G1_Cal.root";
-    TString calibration_treeName = "null_e001_G1_Cal1";
-*/
-    dataHandler *data = new dataHandler("dmData",inputDir + data_filename, data_treeName);
-   // dataHandler *calibration = new dataHandler("calibration", inputDir + calibration_filename, calibration_treeName);
-
-    likeHood->setDataHandler(data);
-//    likeHood->setCalibrationData(calibration);
-
-    likeHood->setWithSafeGuard(false);
-//    likeHood->setTreeIndex(2);
-    likeHood->setPrintLevel(INFO);
-    likeHood->initialize();
-    likeHood->getPOI()->setCurrentValue(1);
+    likeHood->printEventSummary();
     double ll = likeHood->maximize(false);
+    likeHood->printEventSummary();
 
     // class example to compare histograms
     histoCompare p = likeHood->getModelCompare();
-    //p.setNameofComponent(1,"flat");
-    //p.setNameofComponent(1,"AC");
     p.setNameofComponent(1, "CNNS");
-    p.setNameofComponent(2, "Radio");
-    p.setNameofComponent(3, "AC");
-    p.setNameofComponent(4, "Wall");
-    p.setNameofComponent(5, "ER");
-    p.setNameofComponent(6, "WIMP 50 GeV ");
-    p.rebinY = 1;
+    p.setNameofComponent(2, "RadioNX");
+    p.setNameofComponent(3, "Radio");
+    p.setNameofComponent(4, "AC");
+    p.setNameofComponent(5, "Wall");
+    p.setNameofComponent(6, "ER");
+    p.setNameofComponent(7, "WIMP 50 GeV ");
+    p.rebinY = 3;
     p.rebinX = 1;
     p.doStack = true;
     p.titleY = "Entries/[PE]";
+ //   p.titleX = "cS1 [PE]";
     p.titleX = "log10(cS2_bottom [PE])";
-    p.projectionMin = 1.;//2.; //1.;
-    p.projectionMax =  70.;//3.9; //70.;
-    p.projectionX = false; //false;
-//    p.compareWithRatio();
+    p.projectionMin = 3.;//1.7; //1.;
+    p.projectionMax = 70.;//3.9;
+    p.projectionX = false;//    p.compareWithRatio();
     p.compare();
 
     p.printModels();
 
-    likeHood->printEventSummary();
 
+/*
     TH2F er_bkg = likeHood->getBkgComponent("hbkg")->getDefaultHisto();
     int binMin = er_bkg.GetXaxis()->FindBin(p.projectionMin);
     int binMax = er_bkg.GetXaxis()->FindBin(p.projectionMax);
@@ -71,6 +48,7 @@
     pr_bkg->SetLineColor(4);
     pr_bkg->SetLineWidth(3);
     pr_bkg->Draw("hist same");    
+*/
 
 /*
     TH2F bkg = likeHood->bkg_components[0]->getInterpolatedHisto();

@@ -1,0 +1,11 @@
+hadd Rmax_bin21.root Rmax21_*
+hadd Rmax_bin20.root Rmax20_*
+hadd Rmax_bin19.root Rmax19_*
+hadd Rmax_bin18.root Rmax18_*
+hadd Rmax_bin17.root Rmax17_*
+hadd Rmax_bin16.root Rmax16_*
+hadd Rmax_bin15.root Rmax15_*
+hadd Rmax_bin14.root Rmax14_*
+hadd Rmax_bin13.root Rmax13_*
+hadd Rmax_bin12.root Rmax12_*
+hadd Rmax_bin11.root Rmax11_*

@@ -8,74 +8,70 @@
 
 //    pdfLikelihood *likeHood = getTheLikelihoodToFit(10, 50, 0, 1);
     //CombinedProfileLikelihood* likeHood = getTheCombinedLikelihood(10,50,1);
-    pdfLikelihood *likeHood = getTheLikelihoodToFit("sr1",0, 50, 0, 1);
-/*
-    TString inputDir = "../RESULTS/GENtrees/";
-    TString data_filename = "alternate_M50_mu100_G1.root";
-    TString data_treeName = "alternate_M50_mu100_G1_484";
-    TString calibration_filename = "null_G1_Cal.root";
-    TString calibration_treeName = "null_G1_Cal0";
-*/
-/*    TString inputDir = "../build/TEST/";
-    TString data_filename = "e003_M50_mu10_G1.root";
-    TString data_treeName = "e003_M50_mu10_G1_921";
-    TString calibration_filename = "null_e001_G1_Cal.root";
-    TString calibration_treeName = "null_e001_G1_Cal39";
-    dataHandler *data = new dataHandler("dmData",inputDir + data_filename, data_treeName);
-    dataHandler *calibration = new dataHandler("calibration", inputDir + calibration_filename, calibration_treeName);
-*/
-   // likeHood.setDataHandler(data);
-   // likeHood.setCalibrationData(calibration);
+    //pdfLikelihood *likeHood = getTheLikelihoodToFit("sr1",0, 50, 0, 1);
+//    pdfLikelihood *likeHood = getDMLikelihood(50., 1);
+   CombinedProfileLikelihood *likeHood = getDMCombinedLikelihood(50.);
+   //pdfLikelihood *likeHood = getDMLikelihood(50., 0);
+    
+    
+    
+    likeHood->setPrintLevel(INFO);
+    likeHood->printCurrentParameters();
+    likeHood->getPOI()->setMaximum(2);
+    likeHood->getGraphOfLogLikelihood(5);
+
+    	TGraph *likeScan = likeHood->getGraphOfLogLikelihood(5);
+    	likeScan->SetLineWidth(3);
+    	likeScan->SetLineColor(4);
+    	likeScan->SetTitle("signal events = 0");
+    	likeScan->Draw("AC* PLC PFC");
+   
+       /*	
+    TString pdfName = "full_like_scan";
 
     TCanvas *c1 = new TCanvas();
-    c1->Print("./Eth_parameter/like_scan_eth.pdf[");
+    c1->Print("./PARA_SCAN/"+pdfName+".pdf[");
 
-    for(int i=0; i < 10; i++){
+    map <int, LKParameter*> *params = likeHood->getParameters();
 
-    likeHood->setPrintLevel(INFO);
-    likeHood->setTreeIndex(i);
-    //likeHood->getPOI()->setCurrentValue(0.);
-    //likeHood->maximize(true);
-    likeHood->setPrintLevel(ERROR);
+	likeHood->maximize(false);
     
-    //likeHood.POI->setMinimum(0.);
-    //likeHood.POI->setMaximum(50);
-    LKParameter* par = likeHood->getParameter(6);
-    //par->setMinimum(-2);
-    //par->setMaximum(2);
+    int itr = 0;
+    TFile f ("./PARA_SCAN/"+pdfName+".root","RECREATE");
+
+    for(ParameterIterator ip=params->begin(); ip!=params->end(); ip++){
+    	itr++;
+	if(itr == 1) continue;
+
+        LKParameter *par = ip->second;
+
+	//    likeHood->setTreeIndex(i);
+    	likeHood->getPOI()->setMaximum(2);
+    	//likeHood->setPrintLevel(ERROR);
+    
+//        par->setMinimum(-1.5);
+//        par->setMaximum(1.5);
     
     //likeHood->getParameter(2)->setType(FIXED_PARAMETER);
     //likeHood->getParameter(2)->setCurrentValue(1.5);
 
-    TGraph *likeScan = likeHood->getLikelihoodScanOfParameter(10,par, 0.);
-    likeScan->SetLineWidth(3);
-    likeScan->SetLineColor(4);
-    likeScan->SetTitle("signal events = 0");
-    likeScan->Draw("AC* PLC PFC");
+    	TGraph *likeScan = likeHood->getLikelihoodScanOfParameter(5,par, 0.85);
+    	likeScan->SetLineWidth(3);
+    	likeScan->SetLineColor(4);
+    	likeScan->SetTitle("signal events = 0.85");
+    	likeScan->Draw("AC* PLC PFC");
   
+    	gPad->BuildLegend();
+        c1->Print("./PARA_SCAN/"+pdfName+".pdf[");
+	likeScan->Write(par->getName());
+
+    }
     
-    /*
-    TGraph *likeScan1 = likeHood.getLikelihoodScanOfParameter(10,par, 10);
-       likeScan1->SetLineWidth(3);
-        likeScan1->SetLineColor(4);
-        likeScan1->SetTitle("signal events = 10");
-        likeScan1->Draw("C PLC PFC");
- */
-   
-       /*
-		for(double mu =0.05 ; mu < 1; mu = mu + 0.2){  
-        TGraph *likeScan1 = new TGraph(*likeHood.getLikelihoodScanOfParameter(10,par, mu));
+    f.Close();
 
-        likeScan1->SetLineWidth(3);
-        likeScan1->SetTitle("signal events = " + TString::Format("%1.1f",mu));
-        likeScan1->Draw("C* PLC PFC");
-   
-    }
- */    
-    gPad->BuildLegend();
-    c1->Print("./Eth_parameter/like_scan_eth.pdf[");
+    c1->Print("./PARA_SCAN/"+pdfName+".pdf]");
 
-    }
-
-    c1->Print("./Eth_parameter/like_scan_eth.pdf]");
+*/
 }
+
+

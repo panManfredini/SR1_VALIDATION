@@ -7,7 +7,7 @@ void setStyle(double factor =1){
 	inel->SetTitleSize(0.05/factor,"XYZ");
 	inel->SetTitleFont(132,"XYZ");
 	inel->SetTitleOffset(1.2,"XYZ");
-	inel->SetOptStat(0);
+//	inel->SetOptStat(0);
 	inel->SetTitleFont(132);
 
 	inel->cd();
