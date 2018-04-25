@@ -8,6 +8,6 @@ done
 
 for f in *V0*.root 
 do
-	hadd $outDir/$f $f $outDir/extra_$f
+	hadd $outDir/rebinned_$f $outDir/inner_rebinned_$f $outDir/extra_rebinned_$f
 done
 
