@@ -6,14 +6,18 @@
     gInterpreter->AddIncludePath("../Xephyr/src"); // in this case is just XEPHYR src from next dir.
     gROOT->ProcessLine(".L ../SR1/StatisticalAnalyses/xephyr_sr1_likelihood/src/likelihoodDef.cxx");
 
-    pdfLikelihood *likeHood = getDMLikelihood(50., 0);
+
+      pdfLikelihood *likeHood = getDMLikelihood(50., 0);
 //    CombinedProfileLikelihood *likeHood = getDMCombinedLikelihood(50.);
-    likeHood->getPOI()->setCurrentValue(10.);
+//    likeHood->getPOI()->setCurrentValue(129.6542);
 
 
     likeHood->printEventSummary();
     double ll = likeHood->maximize(false);
     likeHood->printEventSummary();
+
+    cout << " sig multipl. :  " << likeHood->getSignalMultiplier() << endl;
+
 
     // class example to compare histograms
     histoCompare p = likeHood->getModelCompare();
@@ -24,7 +28,7 @@
     p.setNameofComponent(5, "Wall");
     p.setNameofComponent(6, "ER");
     p.setNameofComponent(7, "WIMP 50 GeV ");
-    p.rebinY = 3;
+    p.rebinY = 1;
     p.rebinX = 1;
     p.doStack = true;
     p.titleY = "Entries/[PE]";

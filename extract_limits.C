@@ -1,7 +1,7 @@
 void extract_limits(TString filePath, TString discoveryPath){
 
 
-	TString OUT_DIR = "LIMITS/egg_nx/";
+	TString OUT_DIR = "LIMITS/benchmark/";
 	//TString OUT_DIR = "LIMITS/egg_nx_bugfix/";
 
 	TFile *f = TFile::Open(filePath);
@@ -11,8 +11,9 @@ void extract_limits(TString filePath, TString discoveryPath){
 	//TTree *disc = (TTree*)f_disc->Get("post_fit_tree");
 	//cout << disc->GetName() << endl;
 	
-	const int n_masses = 4;
-	double mass_list[n_masses] = {6., 10., 50., 200.};
+	const int n_masses = 1;
+	double mass_list[n_masses] = {50.};
+//	double mass_list[n_masses] = {6., 10., 50., 200.};
 	
 	//TGraphAsymmErrors sensitivity(TTree* tree, TString OutDir, double[] wimpMass, int N_mass)
 
