@@ -1,0 +1,89 @@
+==== Log-likelihood-profile ====
+To investigate whether the likelihood minimization has converged to a true minimum, rather than a false one, and in general validate the profiling machinery, the below plots show the likelihood as function of all likelihood parameters. No clear problems are seen. One false minimum for the safeguard is seen, but the minimum achieved looks to be the best. 
+Note that these are not profile likelihoods-- for each plot, only the parameter on the x-axis is varied, while the others are kept at the best-fit value. For the purpose of diagnosing fits, this is adequate, and much faster than performing a profile in each nuisance parameter direction. 
+Lastly, the flatness of the AC likelihood is a reflection of the flat constraint put in. Note that a slight tilt drives the value to one or the other edge of the allowed range.
+
+Note about XEPHYR: the likelihood is build by divinding the whole TPC volume into 3-subvolumes, the full likelihood is then a combination of those sub-likelihoods, therefore the parameters that are considered independent appear 3 times, ones for each subvolume.
+
+^ Projection Plots ^ 
+^ Log-likelihood ratio in WIMP cross-section/$1\cdot10^{-45}\mathrm{cm}^2$ ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_wimp_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:poi_scan.png?400}} </imgcaption>| <imgcaption blueicellr_wimp_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterwimp_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in radiogenics_rate_multiplier ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_radiogenics_rate_multiplier|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-08.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-12.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-17.png?400}} </imgcaption>| <imgcaption blueicellr_radiogenic_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterradiogenic_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in radio neutron X rate_multiplier ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_radiogenics_rate_multiplier|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-06.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-11.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-16.png?400}} </imgcaption>| <imgcaption blueicellr_radiogenic_rate_multiplier|> </imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 ER rate in science data ^^
+^  Xephyr ^ blueice ^
+| **no SR0 combination** | <imgcaption blueicellr_er_SR0_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterer_SR0_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 ER rate in science data ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_er_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-03.png?400}} </imgcaption>| <imgcaption blueicellr_er_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterer_SR1_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 Surface rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_wall_SR0_rate_multiplier|> </imgcaption>| <imgcaption blueicellr_wall_SR0_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterwall_SR0_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 Surface rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_wall_SR1_rate_multiplier|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:Wallscale0.png?400}} {:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:Wallscale1.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:Wallscale2.png?400}} </imgcaption>| <imgcaption blueicellr_wall_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterwall_SR1_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 AC rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_ac_SR0_rate_multiplier|> </imgcaption>| <imgcaption blueicellr_ac_SR0_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterac_SR0_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 AC rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_ac_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-08.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-13.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-18.png?400}} </imgcaption>| <imgcaption blueicellr_ac_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterac_SR1_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 CNNS rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_cnns_SR0_rate_multiplier|> </imgcaption>| <imgcaption blueicellr_cnns_SR0_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parametercnns_SR0_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 CNNS rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_cnns_SR1_rate_multiplier|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-04.png?400}}  </imgcaption>| <imgcaption blueicellr_cnns_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parametercnns_SR1_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 ER recombination fluctuation parameter ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_er_rf_SR0|> </imgcaption>| <imgcaption blueicellr_er_rf_SR0|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterer_rf_SR0_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 ER recombination fluctuation parameter ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_er_rf_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-01.png?400}} </imgcaption>| <imgcaption blueicellr_er_rf_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterer_rf_SR1_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in ER photon yield parameter ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_er_py|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:CORR_PY_SR1.png?400}} </imgcaption>| <imgcaption blueicellr_er_py|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterer_py_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 Safeguard as fraction of ER ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_mm_fraction_SR0|> </imgcaption>| <imgcaption blueicellr_mm_fraction_SR0|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parametermm_fraction_SR0_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 Safeguard as fraction of ER ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_mm_fraction_SR1|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-10.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-15.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-20.png?400}}</imgcaption>| <imgcaption blueicellr_mm_fraction_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parametermm_fraction_SR1_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 Science data surface shape parameter ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_wall_scale_SR0|> </imgcaption>| <imgcaption blueicellr_wall_scale_SR0|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterwall_scale_SR0_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 Science data surface shape parameter ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_wall_scale_SR1|> </imgcaption>| <imgcaption blueicellr_wall_scale_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterwall_scale_SR1_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 Signal efficiency ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_efficiency_SR0|> </imgcaption>| <imgcaption blueicellr_efficiency_SR0|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterefficiency_SR0_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 Signal efficiency ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_efficiency_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-05.png?400}} </imgcaption>| <imgcaption blueicellr_efficiency_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterefficiency_SR1_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+

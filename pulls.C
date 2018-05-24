@@ -1,6 +1,6 @@
 {
 
-    TString mu = "1";
+    TString mu = "0.5";
     bool isUncond = true;
 
 //    gStyle->SetOptStat(0);
@@ -13,18 +13,18 @@
 
     TString inputDir = "../build/RESULTS/FITtrees/";
 //    TString filename = "post_fit_sr1_M50_mu100_G2.root"; 
-    TString filename = "post_fit_sr1_M50.root";
+    TString filename = "post_fit_apr_ER2_RG2_W2_M50.root";
     TString treeName = "post_fit_tree";
 
 
     TFile *f_pull = TFile::Open(inputDir+filename);
     TTree *tree   = (TTree*)f_pull->Get(treeName);
 
-   TGraphErrors band(20);
-   TGraphErrors band2(20);
-    for (int i=0; i < 20; i++) { band.SetPoint(i,i,0); band.SetPointError(i, 0,1); band2.SetPoint(i,i,0); band2.SetPointError(i, 0,0); }
+   TGraphErrors band(25);
+   TGraphErrors band2(25);
+    for (int i=0; i < 25; i++) { band.SetPoint(i,i,0); band.SetPointError(i, 0,1); band2.SetPoint(i,i,0); band2.SetPointError(i, 0,0); }
 
-    TGraphAsymmErrors pull_mu = plotHelpers::pulls(tree, "./pulls_sr1/", "sr1_mu" + mu, "mass==50 && mu_fit=="+mu,  isUncond );
+    TGraphAsymmErrors pull_mu = plotHelpers::pulls(tree, "./pulls_sr1/apr_v2/", "aprv2" , "mass==50 && mu_fit=="+mu,  isUncond );
 
     gPad->SetBottomMargin(0.25);
     

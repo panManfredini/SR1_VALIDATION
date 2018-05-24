@@ -1,0 +1,463 @@
+====== Post-unblinding fit and inference results ======
+
+This page shows the large amount of results and check-plots on the statistics analysis, with comparisons between Xephyr and blueice results. 
+
+  * [[https://xe1t-wiki.lngs.infn.it/doku.php?id=xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:unblind_validation&rev=1526290470 | Results before desalination]]
+  * [[https://xe1t-wiki.lngs.infn.it/doku.php?id=xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:unblind_validation&rev=1524818392 | Result at unblinding: SR1 only analysis]]
+  * 150508 Update to run combination results, AprilV2 inputs.
+  * 150509 More masses
+  * 180515 desalinated results
+
+===== Shorter summary =====
+
+The unblinded (and as of the 14th of May unsalted) SR1 data shows a small excess with respect to the median expectation corresponding to a 1-sigma upwards fluctuation. For both analysis codes, the best-fit signal rate is higher than 0, with a higher rate seen with blueice (which includes some higher radius events). Wall-fits are in line with expected numbers, and fits look to be good. Limits are a bit higher than the +1 sigma line as a consequence of the excess, both the best-fit itself and a wider-than-average likelihood. 
+
+===== Main results =====
+The p-value is our main deliverable in the case of a large excess. It is defined as the probability, given the background only hypothesis, that the best-fit is equally or more incompatible with the background-only hypothesis. The p-value is uniformly distributed between 0 and 1 if the background-only model is correct. 
+
+In our combined analysis, the p-value is just on the far side of the 1-sigma line, or indeed close to the 0-sigma line taking the global p-value into account. The result should therefore be considered expected. 
+^ P-value plots ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrpvalueplot|> </imgcaption>| <imgcaption blueicepvalueplot|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:pval_discovery_sr10_lax151m_vs_mass_livetime246.74_2sided151m_desalinated.png?direct&400|}}</imgcaption> | 
+| |  | 
+
+We use the profiled likelihood to perform inference. Below, the likelihood-ratio curve for SR0, SR1 and the combined analysis is shown. Our result uses the combined dataset. 
+^ WIMP LLR plots ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllrplot|></imgcaption>| <imgcaption blueicellrplot|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curves_combination_wimp_mass_200151m_desalinated.png?direct&400|}}</imgcaption> | 
+| | Likelihood ratio plot at 200GeV| 
+
+
+The green and yellow bands of the sensitivity plot shows the 1- and 2-sigma regions for our upper limit. Note that as the width of the sensitivity is not constant, neither will the distance between best-fit and limit-- a 1-sigma excess may not result in exactly a 1-sigma higher-than-median limit. The magenta curve shows the desalinated, combined upper limit. The grey line and band is the published SR0 result. 
+^ Limit plots ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrlimit|>  </imgcaption>| <imgcaption blueicelimitplot|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:limit_unblinded_sr10egg_lax151m__vs_mass_livetime246.74_2sided151m_desalinated.png?direct&400|}}</imgcaption> | 
+| | | 
+
+
+
+===== SR0 reanalysis results =====
+
+Note: the SR0 reanalysis is not updated with template updates. The plots below reflect results at unblinding. 
+^ P-value plots ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrpvalueplotsr0|> </imgcaption>| <imgcaption blueicepvalueplotsr0|>{{:undefined:pval_discovery_sr0_lax1d5d0_vs_mass_livetime32.13_2sided.png?direct&400|}}</imgcaption> | 
+| | | 
+
+
+^ Limit plots ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrlimitplotsr0|> </imgcaption>| <imgcaption blueicelimitplotsr0|>{{:undefined:limit_unblinded_sr0_lax1d5d1_vs_mass_livetime32.13_2sided.png?direct&400|}}</imgcaption> | 
+| | | 
+
+
+===== Fitting tests  =====
+==== Projection Plots ====
+
+=== Copies of all the plots===
+All blueice best-fit projection plots (and llr curves) can be found here: 
+{{ :xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:blueice_unblindingday_bestfits.zip |}}
+
+In order to diagnose bad fits, and to more easily see excesses, the below projections show the best-fit (including rate and shape parameters) for each component as well as the total. 
+
+Note that the statistical uncertainty band, in gray is the Poisson 68% band. This is conceptually correct, but note that this means that the band is discrete (in expected events). A very low expectation (say 1e-3) may have more than 68% chance of being 0, so the band will be (0,0). In those cases, the band is set to be (0,mu) where mu is the expected rate (so (0,1e-3) in the example) 
+Also note that the y-axis is in events/x-axis. 
+
+^ Projection Plots ^^
+^ Best-fit projection on $\mathrm{cs}_1$ [pe] ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyraxis0|> </imgcaption>| <imgcaption blueiceaxis0|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:projection_sr1_axis_0_logscale_bestfit151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Best-fit projection on $\mathrm{log}_{10}(\mathrm{cs}_2 \mathrm{bottom} / (1\mathrm{pe}))$  ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyraxis1|> </imgcaption>| <imgcaption blueiceaxis1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:projection_sr1_axis_1_logscale_bestfit151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Best-fit projection on $r^2$ [$\mathrm{cm}^2$] ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyraxis2|> </imgcaption>| <imgcaption blueiceaxis2|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:projection_sr1_axis_2_logscale_bestfit151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+
+^ cs1-slices projected on cs2 ^ 
+^ Best-fit projection on cs1 ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyraxiscs1slice-1|> </imgcaption>| <imgcaption blueicecs1slice-1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:projection_cs1slice_3to10_axis_1_logscale_blinded_bestfit151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Best-fit projection on cs1 ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyraxiscs1slice0|> </imgcaption>| <imgcaption blueicecs1slice0|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:projection_cs1slice_10to20_axis_1_logscale_blinded_bestfit151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Best-fit projection on cs1 ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyraxiscs1slice1|> </imgcaption>| <imgcaption blueicecs1slice1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:projection_cs1slice_20to30_axis_1_logscale_blinded_bestfit151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Best-fit projection on cs1 ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyraxiscs1slice2|> </imgcaption>| <imgcaption blueicecs1slice2|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:projection_cs1slice_30to40_axis_1_logscale_blinded_bestfit151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Best-fit projection on cs1 ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyraxiscs1slice5|> </imgcaption>| <imgcaption blueicecs1slice5|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:projection_cs1slice_40to50_axis_1_logscale_blinded_bestfit151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Best-fit projection on cs1 ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyraxiscs1slice6|> </imgcaption>| <imgcaption blueicecs1slice6|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:projection_cs1slice_50to70_axis_1_logscale_blinded_bestfit151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+
+
+=== Best-fit in log10(cs2_b) <2.7 ===
+To confirm that the Wall shape modelling in cs1,cs2 fits the data, the plots below shows the cs1,cs2 projection of the data for a cs2 range where the wall background completely cominates. 
+
+^ Best-fit projection at log10(cs2_b) <2.7 ^^
+^ cs1 ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrlowcs2_1|> </imgcaption>| <imgcaption blueicelowcs2_1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:lowcs2projection_SR1_axis_0_logscale_bestfit151m_desalinated.png?direct&400|}}</imgcaption> | 
+| | |
+^ log10(cs2) ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrlowcs2_1|> </imgcaption>| <imgcaption blueicelowcs2_1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:lowcs2projection_SR1_axis_1_logscale_bestfit151m_desalinated.png?direct&400|}}</imgcaption> | 
+| | |
+^ r ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrlowcs2_1|> </imgcaption>| <imgcaption blueicelowcs2_1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:lowcs2projection_SR1_axis_2_logscale_bestfit151m_desalinated.png?direct&400|}}</imgcaption> | 
+| | |
+==== Log-likelihood-profile ====
+To investigate whether the likelihood minimization has converged to a true minimum, rather than a false one, and in general validate the profiling machinery, the below plots show the likelihood as function of all likelihood parameters. No clear problems are seen. One false minimum for the safeguard is seen, but the minimum achieved looks to be the best. 
+Note that these are not profile likelihoods-- for each plot, only the parameter on the x-axis is varied, while the others are kept at the best-fit value. For the purpose of diagnosing fits, this is adequate, and much faster than performing a profile in each nuisance parameter direction. 
+Lastly, the flatness of the AC likelihood is a reflection of the flat constraint put in. Note that a slight tilt drives the value to one or the other edge of the allowed range.
+
+Note about XEPHYR: the likelihood is build by divinding the whole TPC volume into 3-subvolumes, the full likelihood is then a combination of those sub-likelihoods, therefore the parameters that are considered independent appear 3 times, ones for each subvolume.
+
+^ Projection Plots ^ 
+^ Log-likelihood ratio in WIMP cross-section/$1\cdot10^{-45}\mathrm{cm}^2$ ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_wimp_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:poi_scan.png?400}} </imgcaption>| <imgcaption blueicellr_wimp_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterwimp_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in radiogenics_rate_multiplier ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_radiogenics_rate_multiplier|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-08.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-12.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-17.png?400}} </imgcaption>| <imgcaption blueicellr_radiogenic_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterradiogenic_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in radio neutron X rate_multiplier ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_radiogenics_rate_multiplier|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-06.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-11.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-16.png?400}} </imgcaption>| <imgcaption blueicellr_radiogenic_rate_multiplier|> </imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 ER rate in science data ^^
+^  Xephyr ^ blueice ^
+| **no SR0 combination** | <imgcaption blueicellr_er_SR0_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterer_SR0_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 ER rate in science data ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_er_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-03.png?400}} </imgcaption>| <imgcaption blueicellr_er_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterer_SR1_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 Surface rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_wall_SR0_rate_multiplier|> </imgcaption>| <imgcaption blueicellr_wall_SR0_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterwall_SR0_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 Surface rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_wall_SR1_rate_multiplier|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:Wallscale0.png?400}} {:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:Wallscale1.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:Wallscale2.png?400}} </imgcaption>| <imgcaption blueicellr_wall_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterwall_SR1_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 AC rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_ac_SR0_rate_multiplier|> </imgcaption>| <imgcaption blueicellr_ac_SR0_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterac_SR0_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 AC rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_ac_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-08.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-13.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-18.png?400}} </imgcaption>| <imgcaption blueicellr_ac_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterac_SR1_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 CNNS rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_cnns_SR0_rate_multiplier|> </imgcaption>| <imgcaption blueicellr_cnns_SR0_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parametercnns_SR0_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 CNNS rate relative to nominal ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_cnns_SR1_rate_multiplier|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-04.png?400}}  </imgcaption>| <imgcaption blueicellr_cnns_SR1_rate_multiplier|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parametercnns_SR1_rate_multiplier_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 ER recombination fluctuation parameter ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_er_rf_SR0|> </imgcaption>| <imgcaption blueicellr_er_rf_SR0|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterer_rf_SR0_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 ER recombination fluctuation parameter ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_er_rf_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-01.png?400}} </imgcaption>| <imgcaption blueicellr_er_rf_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterer_rf_SR1_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in ER photon yield parameter ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_er_py|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:CORR_PY_SR1.png?400}} </imgcaption>| <imgcaption blueicellr_er_py|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterer_py_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 Safeguard as fraction of ER ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_mm_fraction_SR0|> </imgcaption>| <imgcaption blueicellr_mm_fraction_SR0|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parametermm_fraction_SR0_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 Safeguard as fraction of ER ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_mm_fraction_SR1|> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-10.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-15.png?400}} {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-20.png?400}}</imgcaption>| <imgcaption blueicellr_mm_fraction_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parametermm_fraction_SR1_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 Science data surface shape parameter ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_wall_scale_SR0|> </imgcaption>| <imgcaption blueicellr_wall_scale_SR0|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterwall_scale_SR0_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 Science data surface shape parameter ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_wall_scale_SR1|> </imgcaption>| <imgcaption blueicellr_wall_scale_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterwall_scale_SR1_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR0 Signal efficiency ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_efficiency_SR0|> </imgcaption>| <imgcaption blueicellr_efficiency_SR0|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterefficiency_SR0_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+^ Log-likelihood ratio in SR1 Signal efficiency ^^
+^  Xephyr ^ blueice ^
+| <imgcaption xephyrllr_efficiency_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:param-05.png?400}} </imgcaption>| <imgcaption blueicellr_efficiency_SR1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:llr_curve_parameterefficiency_SR1_SR1_wimp_mass50_noprofile.png151m_desalinated.png?400|}}</imgcaption> | 
+| | |
+==== Per-event PDF ratios ====
+
+===== Best-fit plots =====
+Note: these plots are for illustration, the WIMP spectrum fits to the entire distribution. these plots only show which source contributes the largest part of the total PDF per event. 
+===== Dominant background in r slices =====
+
+The following plots show the dominant background in cs1-cs2 space for multiple slices in r. Note that in regions in the tails of every distribution, scatter could be expected: 
+Thanks to Jelle for neat WIMP contour code. 
+
+^ 0<r<34.6 inside egg ^
+| <imgcaption domisource0> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:domibkg_rcuts_-34.6_0.0151m_desalinated.png?direct&400|}}</imgcaption> | 
+^ 0<r<34.6 outside egg^
+| <imgcaption domisource1>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:domibkg_rcuts_0.0_34.6151m_desalinated.png?direct&400|}} </imgcaption> | 
+^ 34.6<r<36.9 ^
+| <imgcaption domisource2>  {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:domibkg_rcuts_34.6_36.9151m_desalinated.png?direct&400|}}</imgcaption> | 
+^ 36.9<r<38.7 ^
+| <imgcaption domisource3> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:domibkg_rcuts_36.9_38.7151m_desalinated.png?direct&400|}} </imgcaption> | 
+^ 38.7<r<40.4 ^
+| <imgcaption domisource4> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:domibkg_rcuts_38.7_40.4151m_desalinated.png?direct&400|}} </imgcaption> | 
+^ 40.4<r<42.0 ^
+| <imgcaption domisource5> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:domibkg_rcuts_40.4_42.0151m_desalinated.png?direct&400|}} </imgcaption> | 
+^ 42.0<r<42.8 ^
+| <imgcaption domisource6> {{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:domibkg_rcuts_42.0_42.8151m_desalinated.png?direct&400|}} </imgcaption> | 
+===== Total best-fit =====
+
+^ Best-fit total expectation in cs1,cs2 ^
+| <imgcaption blueicetotalmus1s2></imgcaption> |
+| Plot showing the (radial summed) expectation in bins of cs1,cs2 together with s1 data showing the total model fitted to data. | 
+^ Best-fit PDF of events cs1,cs2 ^
+| <imgcaption blueicetotalpdfs1s2></imgcaption> |
+| Plot showing the best-fit PDF of each event in cs1,cs2 space.  | 
+====== Best-fit parameters ======
+This section contains a table for reference of the best-fit parameters at each mass. 
+
+Note that the files containing the best-fit and upper limits may be found here: 
+https://github.com/XENON1T/SR1Results/tree/blueice_151m/StatisticalAnalyses/blueice_analysis/cached_results/combined_result . 151m is the Aprilv2 input result folder. 
+
+<tabcaption postfit_pars|Best-fit parameters>
+^ Best-fit ^^^^^^^^^^^^
+^ rate parameters ^^^^^^^^^^^^
+^ parameter ^ 6 GeV ^  8 GeV ^  10 GeV ^  15 GeV ^  20 GeV ^  30 GeV ^  50 GeV ^  70 GeV ^  100 GeV ^  150 GeV ^  200 GeV ^ 
+| SR0 AC rate relative to nominal |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |
+| SR1 AC rate relative to nominal |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |
+| SR0 Rn 200 AC rate relative to nominal |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |
+| SR1 Rn 200 AC rate relative to nominal |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |5.900e-01 |6.944e-01 |6.169e-01 |5.900e-01 |5.900e-01 |5.900e-01 |
+| SR0 CNNS rate relative to nominal |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |
+| SR1 CNNS rate relative to nominal |9.949e-01 |9.949e-01 |9.949e-01 |9.949e-01 |9.949e-01 |9.949e-01 |9.949e-01 |9.949e-01 |9.949e-01 |9.949e-01 |9.949e-01 |
+| SR0 ER rate in science data |9.014e-01 |9.014e-01 |9.014e-01 |9.015e-01 |9.015e-01 |9.013e-01 |9.007e-01 |9.011e-01 |9.011e-01 |9.010e-01 |9.009e-01 |
+| SR1 ER rate in science data |8.909e-01 |8.909e-01 |8.908e-01 |8.907e-01 |8.906e-01 |8.903e-01 |8.891e-01 |8.901e-01 |8.900e-01 |8.897e-01 |8.895e-01 |
+| SR0 ER rate in calibration data |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |9.996e-01 |
+| SR1 ER rate in calibration data |9.997e-01 |9.997e-01 |9.996e-01 |9.996e-01 |9.995e-01 |9.995e-01 |9.994e-01 |9.995e-01 |9.995e-01 |9.995e-01 |9.995e-01 |
+| Radiogenic rate relative to nominal |1.123e+00 |1.122e+00 |1.124e+00 |1.126e+00 |1.129e+00 |1.139e+00 |1.092e+00 |1.158e+00 |1.163e+00 |1.156e+00 |1.151e+00 |
+| SR0 Surface rate relative to nominal |8.279e-01 |8.278e-01 |8.278e-01 |8.277e-01 |8.277e-01 |8.285e-01 |8.291e-01 |8.295e-01 |8.295e-01 |8.293e-01 |8.292e-01 |
+| SR1 Surface rate relative to nominal |9.035e-01 |9.033e-01 |9.038e-01 |9.044e-01 |9.051e-01 |9.062e-01 |9.058e-01 |9.034e-01 |9.022e-01 |9.015e-01 |9.013e-01 |
+| WIMP cross-section/$1\cdot10^{-45}\mathrm{cm}^2$ |8.859e-11 |0.000e+00 |0.000e+00 |0.000e+00 |0.000e+00 |0.000e+00 |2.997e-03 |1.015e-02 |1.881e-02 |3.125e-02 |4.310e-02 |
+^ shape parameters ^^^^^^^^^^^^
+^ parameter ^ 6 GeV ^  8 GeV ^  10 GeV ^  15 GeV ^  20 GeV ^  30 GeV ^  50 GeV ^  70 GeV ^  100 GeV ^  150 GeV ^  200 GeV ^ 
+| SR0 Signal efficiency |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |9.999e-01 |9.999e-01 |9.998e-01 |9.997e-01 |9.997e-01 |
+| SR1 Signal efficiency |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |
+| ER photon yield parameter |-7.895e-02 |-7.692e-02 |-7.716e-02 |-7.085e-02 |-6.504e-02 |-5.766e-02 |-4.988e-02 |-5.041e-02 |-4.860e-02 |-4.756e-02 |-4.730e-02 |
+| SR0 ER recombination fluctuation parameter |3.224e-01 |3.281e-01 |3.300e-01 |3.536e-01 |4.125e-01 |5.586e-01 |5.477e-01 |5.848e-01 |6.086e-01 |6.223e-01 |6.173e-01 |
+| SR1 ER recombination fluctuation parameter |8.639e-02 |8.783e-02 |8.762e-02 |9.669e-02 |1.080e-01 |1.386e-01 |2.448e-01 |2.068e-01 |2.267e-01 |2.398e-01 |2.453e-01 |
+| SR0 Safeguard as fraction of ER |-3.000e-02 |-1.800e-02 |-1.200e-02 |-1.278e-02 |-1.626e-02 |-1.200e-02 |-6.000e-03 |-6.001e-03 |-5.992e-03 |-5.969e-03 |-5.810e-03 |
+| SR1 Safeguard as fraction of ER |1.260e-04 |2.638e-04 |-7.860e-04 |-2.323e-03 |-2.927e-03 |-3.769e-03 |-4.490e-03 |-4.582e-03 |-4.777e-03 |-4.863e-03 |-4.891e-03 |
+| SR0 Science data surface shape parameter |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |1.000e+00 |
+| SR1 Science data surface shape parameter |-3.863e-01 |-3.871e-01 |-3.855e-01 |-3.831e-01 |-3.796e-01 |-3.738e-01 |-3.754e-01 |-3.861e-01 |-3.918e-01 |-3.950e-01 |-3.962e-01 |
+| Wimp mass [GeV] |6 |8 |10 |15 |20 |30 |50 |70 |100 |150 |200 |
+
+
+</tabcaption> \\
+
+
+====WIMP PDF, best-fit WIMP fraction .gifs over masses====
+the below plots show: 
+  * WIMP PDF per mass (arbitrary normalisation) 
+  * WIMP PDF per mass (arbitrary normalisation) in linear scale
+  * Fraction of total per-event PDF contributed by WIMP in best-fit per mass. Note that when the best-fit is 0, the plot is empty. 
+  * Difference in log(PDF) between the fit when the signal is set to the upper limit, and when the signal is at the best-fit
+  * 
+Three things of note: 
+  - The PDF is not normalised in r,z space due to the egging, lower/higher PDF values will reflect the relative size of spatial categorizations. 
+  - The higher overlap in cs1/cs2 of the low-mass WIMP and the wall events leads to more WIMP PDF for  events at the wall at low masses
+  - At high masses, no clear spatial preference is seen. 
+
+What each set of plots express; 
+  * The region in which signal is expected for each WIMP mass
+  * The region in which signal is expected for each WIMP mass (linear scale)
+  * The signal/backgorund ratio per event-- which parts of parameter space has the highest signal/background ratio
+  * Which events PDF are increased (purple) or decreased (Orange) when the signal size is pulled up to the limit. 
+
+
+^ WIMP pdf per event, movie in mass ^^^^
+^ cs1 cs2 ^ cs1 r ^ cs2 r ^ r z ^ 
+| <imgcaption gif_wimppdf_cs1cs2|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:wimppdf_cs1vscs2_bottom_new_151m_desalinated.gif|}}</imgcaption> | <imgcaption gif_wimppdf_cs1r|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:wimppdf_cs1vsr_151m_desalinated.gif|}}</imgcaption>| <imgcaption gif_wimppdf_cs2r|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:wimppdf_cs2_bottom_newvsr_151m_desalinated.gif|}}</imgcaption>| <imgcaption gif_wimppdf_rz|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:wimppdf_rvsz_151m_desalinated.gif|}}</imgcaption> |
+^ WIMP pdf per event linear scale, movie in mass ^^^^
+^ cs1 cs2 ^ cs1 r ^ cs2 r ^ r z ^ 
+| <imgcaption gif_wimppdf_linear_cs1cs2|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:wimppdf_linear_cs1vscs2_bottom_new_151m_desalinated.gif|}}</imgcaption> | <imgcaption gif_wimppdf_linear_cs1r|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:wimppdf_linear_cs1vsr_151m_desalinated.gif|}}</imgcaption>| <imgcaption gif_wimppdf_linear_cs2r|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:wimppdf_linear_cs2_bottom_newvsr_151m_desalinated.gif|}}</imgcaption>| <imgcaption gif_wimppdf_linear_rz|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:wimppdf_linear_rvsz_151m_desalinated.gif|}}</imgcaption> |
+^ Fraction of PDF contributed by WIMP, movie in mass ^^^^
+^ cs1 cs2 ^ cs1 r ^ cs2 r ^ r z ^ 
+| <imgcaption gif_pdffraction_cs1cs2|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:pdffraction_cs1vscs2_bottom_new_151m_desalinated.gif|}}</imgcaption> | <imgcaption gif_pdffraction_cs1r|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:pdffraction_cs1vsr_151m_desalinated.gif|}}</imgcaption>| <imgcaption gif_pdffraction_cs2r|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:pdffraction_cs2_bottom_newvsr_151m_desalinated.gif|}}</imgcaption>| <imgcaption gif_pdffraction_rz|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:pdffraction_rvsz_151m_desalinated.gif|}}</imgcaption> |
+^ Change in log(PDF) by pulling signal to upper limit, per WIMP mass ^^^^
+^ cs1 cs2 ^ cs1 r ^ cs2 r ^ r z ^ 
+| <imgcaption gif_ulpdfchange_cs1cs2|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:ulpdfchange_cs1vscs2_bottom_new_151m_desalinated.gif|}}</imgcaption> | <imgcaption gif_ulpdfchange_cs1r|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:ulpdfchange_cs1vsr_151m_desalinated.gif|}}</imgcaption>| <imgcaption gif_ulpdfchange_cs2r|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:ulpdfchange_cs2_bottom_newvsr_151m_desalinated.gif|}}</imgcaption>| <imgcaption gif_ulpdfchange_rz|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:ulpdfchange_rvsz_151m_desalinated.gif|}}</imgcaption> |
+| While the above plots largely conform to intuition-- if you pull up the signal, the lower edge of the ER band gets a higher PDF, it does point to two important points: -the excess is not caused by one or a few events, but is rather evenly spread at high-mass low-cs2 ER edge and - the events whose PDF are improved are not obviously spatially clustered||||
+====== Misc tests ======
+
+===== Effect of egg modelling modification on sensitivity and limit , and of using blueice best-fits=====
+It was announced that the analysis would switch to the egg modification,
+ and the above results are made with the egg. 
+
+In addition, discussions in the wimphysics group investigated the effect on the sensitivity estimate of moving from using the nominal bbf-best-fit to using the best-fit shape parameters from the blueice calibration fit in the toyMCs, both keeping the safeguard to 0 (to avoid an unphysical degree of freedom), and including the safeguard. This latter modification only affects the toyMCs for sensitivity, and therefore not the upper limit. 
+The  sensitivity and upper without the egg modification is 4 and 14 percent higher than the corresponding egged values. 
+
+<imgcaption aprilv2_comp|AprilV2 comparisons>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:unblind_validation:limitcomparison_aprilv2_desalinated.png?direct&400|}}</imgcaption>
+
+
+<tabcaption aprilv2_comp_tab|AprilV2 comparisons>
+^ value in cm2 ^Desalinated Result,   Aprilv2, egg ^April v2 templates,   egg modification ^April v2 templates,   egg modification,  ER best-fit toyMC ^April v2 templates,   egg modification,  ER best-fit toyMC with sg ^April v2 templates ^
+| sensitivity| 3.58e-47 |3.58e-47 |3.81e-47 |3.21e-47 |3.73e-47 |
+| $+1\sigma$ percentile of ULs| 6.06e-47 |6.06e-47 |6.32e-47 |5.51e-47 |6.59e-47 |
+| $-1\sigma$ percentile of ULs| 1.61e-47 |1.61e-47 |1.59e-47 |1.36e-47 |1.76e-47 |
+| upper limit| 5.26e-47 |5.60e-47 |5.60e-47 |5.60e-47 |6.46e-47 |
+| best-fit signal| 3.00e-48 |4.08e-48 |4.08e-48 |4.08e-48 |1.19e-47 |
+| best-fit mismodelling fraction| -4.49e-03 |-4.47e-03 |-4.47e-03 |-4.47e-03 |-8.03e-03 |
+| best-fit wall rate| 9.06e-01 |9.16e-01 |9.16e-01 |9.16e-01 |9.13e-01 |
+| best-fit wall scale| -3.75e-01 |-3.19e-01 |-3.19e-01 |-3.19e-01 |-3.23e-01 |
+
+
+</tabcaption> \\
+
+
+
+===== Models Checks =====
+[[xenon:xenon1t:analysis:subgroup:wimphysics:telecon180321|We found out]] that fitting models to unblided data in a **fiducial volume of ~1T ** XEPHYR and BLUICE show different best fits of the parameter of interest (signal strength).
+
+In particular Xephyr fits **0.85** events and Bluice **1.5** events. While this is not very worrisome we discovered that it is mainly due to (in order of importance):
+  - Safeguard implementation
+  - Wall uncertainty implementation
+  - AC having uniform uncertainty (being pulled)
+
+
+<imgcaption aprilv2sensiversions|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:calonly_safeguardcomparison_cs2bottom151b_unblindingday.png?400|}}</imgcaption>
+
+||
+^fig U.1, fit to the calibration data, with and without safeguard. ^ 
+
+The figure shows that the safeguard is correctly pulled, meaning that the model does not reproduce the calibration with the requested precision.
+
+It might just be a unfortunate stat fluctuation (also because seems to apper only for >50 GeV). Modeles could be helpfull here in understanting if this is an issue or not.
+
+===== Xephyr/blueice AprilV2 comparisons =====
+With previous versions of inputs, complete toyMC non-asymptotic sensitivities were computed, and found to agree well between Xephyr and blueice. 
+In these tests, the mismodelling term (safeguard) is turned off, and the radius is restricted to below r_cut = 36.482183 to ensure that differing analysis treatments are reduced in importance. 
+
+All shape nuisance parameters set to 0, limits agreed to 12%. Furthermore, as shown in <imgref aprilv2Xephyrblueiceneymanthreshold>, the Neyman thresholds used for non-asymptotic limits agree. 
+
+<imgcaption aprilv2Xephyrblueiceneymanthreshold|Comparison of blueice Neyman threshold (triangles) and Xephyr(stars)>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:ale_knut_quantiles.png?direct&400|}}</imgcaption>
+
+Using the low radius, both codes agree on a best-fit signal rate of 0, when the radial cut is relaxed, blueice finds a non-zero best-fit signal. Note that this has changed with inputs version--the likelihood is shallow and the difference between 0 and 1 event best-fit is small. 
+
+
+==== Blueice/BBF best-fit agreement checks====
+Computing naive (toyMC binned poisson likelihood from best-fit mu vs actual data) goodness-of-fit p-values shows good agreement in science data, and in the calibration data cs1 direction. In cs2, however, a pvalue of ~1% is seen. While the total likelihood (in above GOF tests) is in line with variation, this could highlight a possible mismatch between the best-fit template as determined by the bbf framework, and those used in blueice. 
+
+As a first test, to see that the model as used in bbf and in blueice are in accord, the median of the bbf pdf band is compared to the blueice best-fit: 
+
+^ BlueiceBBFconcordance ^^^^^^^
+^ 3<cs1<10 ^ 10<cs1<20 ^ 20<cs1<30 ^ 30<cs1<40 ^ 40<cs1<50 ^ 50<cs1<70 ^
+| <imgcaption blueicebbf1|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:comparenominalbestfit_log_3.0_cs1_10.0151c.png?300|}}</imgcaption> |<imgcaption blueicebbf2|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:comparenominalbestfit_log_10.0_cs1_20.0151c.png?300|}}</imgcaption> |<imgcaption blueicebbf3|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:comparenominalbestfit_log_20.0_cs1_30.0151c.png?300|}}</imgcaption> |<imgcaption blueicebbf4|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:comparenominalbestfit_log_30.0_cs1_40.0151c.png?300|}}</imgcaption> |<imgcaption blueicebbf5|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:comparenominalbestfit_log_40.0_cs1_50.0151c.png?300|}}</imgcaption> |<imgcaption blueicebbf6|>{{:xenon:xenon1t:analysis:subgroup:wimphysics:sr1_statistics:sr1_statistics_validation:comparenominalbestfit_log_50.0_cs1_70.0151c.png?300|}}</imgcaption> |
+
+Templates should be [[https://github.com/XENON1T/SR1Results/pull/43|here on GitHub]].
+====== ToyMC GOF and outlier checks ======
+In order to investigate outliers and goodness of fit, one approach is to compute toyMCs using the nominal parameters (e.g. no signal, nominal ER rate, parameters) as used in the sensitivity. Comparing the 
+
+^ Minimum-PDF distribution ^
+| <imgcaption blueiceoutlierpdf|></imgcaption> | 
+| The most improbable event (the one with the lowest best-fit PDF), sr1 case in magenta,  is (using sr1 nominal distributions) a bit less improbable than the  average most improbable event, suggesting that no major background tail is un-modelled. | 
+^ Maximum-likelihood-distribution ^
+| <imgcaption blueicellhGOF|></imgcaption>|
+| Distribution of best-fit likelihood for nominal SR1 parameters (no signal) and the SR1 dataset (magenta). The likelihood is in the bulk of the distribution, suggesting a normally good fit to the science data. |
+
+
+====== Post unblinding integral tables ======
+
+==== SR0 ====
+
+<tabcaption sr0_full_postfit|SR0 (R < 43 cm)>
+^ R<43 cm ^ total ^ NR band (-2 sigma, median) ^ cS1 in (3,20), < NR -4.5 sigma ^ cS1 in (20,70), < NR -4.5 sigma ^ NR (-4.5 sigma, -2 sigma) ^ 
+^ Electronic recoils | 73 $\pm$ 9 | 0.30 $\pm$ 0.04 | 0.00 | 0.00 | 0.00 |
+^ Radiogenic neutrons | 0.18 $\pm$ 0.09 | 0.09 $\pm$ 0.05 | 0.00 | 0.00 | 0.01 $\pm$ 0.01 |
+^ CNNS | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+^ AC | 0.05 $\pm$ 0.02 | 0.01 $\pm$ 0.01 | 0.00 | 0.01 | 0.02 $\pm$ 0.01 |
+^ Wall leakage | 12.58 $\pm$ 0.6 | 0.89 $\pm$ 0.04 | 0.08 | 6.52 $\pm$ 0.3 | 4.96 $\pm$ 0.2 |
+^ Total background | 86.1 $\pm$ 9 | 1.29 $\pm$ 0.07 | 0.09 | 6.53 $\pm$ 0.3 | 5.00 $\pm$ 0.2 |
+^ 50 GeV, $10^{-47} \mathrm{cm}^{2}$ WIMP | 0.09 $\pm$ 0.01 | 0.04 | 0.00 | 0.00 | 0.00 | 
+</tabcaption> \\
+
+<tabcaption sr0_1t_postfit|SR0 (R < 35 cm, 900kg)>
+^ R<35 cm ^ total ^ NR band (-2 sigma, median) ^ cS1 in (3,20), < NR -4.5 sigma ^ cS1 in (20,70), < NR -4.5 sigma ^ NR (-4.5 sigma, -2 sigma) ^ 
+^ Electronic recoils | 52 $\pm$ 6 | 0.21 $\pm$ 0.03 | 0.00 | 0.00 | 0.00 |
+^ Radiogenic neutrons | 0.10 $\pm$ 0.05 | 0.05 $\pm$ 0.03 | 0.00 | 0.00 | 0.01 |
+^ CNNS | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+^ AC | 0.03 $\pm$ 0.01 | 0.01 | 0.00 | 0.00 | 0.01 $\pm$ 0.01 |
+^ Wall leakage | 0.02 | 0.00 | 0.00 | 0.01 | 0.01 |
+^ Total background | 52.2 $\pm$ 6 | 0.27 $\pm$ 0.04 | 0.00 | 0.01 | 0.03 $\pm$ 0.01 |
+^ 50 GeV, $10^{-47} \mathrm{cm}^{2}$ WIMP | 0.06 $\pm$ 0.01 | 0.03 | 0.00 | 0.00 | 0.00 |
+</tabcaption> \\
+
+<tabcaption sr0_1t_postfit|SR0 (R < 0 cm, core mass)>
+^ R<0 cm ^ total ^ NR band (-2 sigma, median) ^ cS1 in (3,20), < NR -4.5 sigma ^ cS1 in (20,70), < NR -4.5 sigma ^ NR (-4.5 sigma, -2 sigma) ^ 
+^ Electronic recoils | 36 $\pm$ 4 | 0.11 $\pm$ 0.01 | 0.00 | 0.00 | 0.00 |
+^ Radiogenic neutrons | 0.04 $\pm$ 0.02 | 0.02 $\pm$ 0.01 | 0.00 | 0.00 | 0.00 |
+^ CNNS | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+^ AC | 0.03 $\pm$ 0.01 | 0.01 | 0.00 | 0.00 | 0.01 |
+^ Wall leakage | 0.01 | 0.00 | 0.00 | 0.00 | 0.00 |
+^ Total background | 36.1 $\pm$ 4 | 0.14 $\pm$ 0.02 | 0.00 | 0.01 | 0.02 |
+^ 50 GeV, $10^{-47} \mathrm{cm}^{2}$ WIMP | 0.04 | 0.02 | 0.00 | 0.00 | 0.00 |  
+</tabcaption> \\
+
+==== SR1 ====
+
+<tabcaption sr1_full_postfit|SR1 (R < 43 cm)>
+^ R<43 cm ^ total ^ NR band (-2 sigma, median) ^ cS1 in (3,20), < NR -4.5 sigma ^ cS1 in (20,70), < NR -4.5 sigma ^ NR (-4.5 sigma, -2 sigma) ^ 
+^ Electronic recoils | 557 $\pm$ 67 | 1.42 $\pm$ 0.17 | 0.00 | 0.00 | 0.01 |
+^ Radiogenic neutrons | 1.39 $\pm$ 0.7 | 0.69 $\pm$ 0.3 | 0.00 | 0.00 | 0.07 $\pm$ 0.04 |
+^ CNNS | 0.05 $\pm$ 0.02 | 0.02 $\pm$ 0.01 | 0.00 | 0.00 | 0.03 $\pm$ 0.01 |
+^ AC | 0.42 $\pm$ 0.17 | 0.09 $\pm$ 0.04 | 0.01 $\pm$ 0.01 | 0.06 $\pm$ 0.03 | 0.19 $\pm$ 0.08 |
+^ Wall leakage | 94.24 $\pm$ 5 | 4.90 $\pm$ 0.2 | 1.22 $\pm$ 0.06 | 53.66 $\pm$ 3 | 33.86 $\pm$ 1.7 |
+^ Total background | 652.9 $\pm$ 67 | 7.13 $\pm$ 0.5 | 1.24 $\pm$ 0.06 | 53.73 $\pm$ 3 | 34.16 $\pm$ 1.7 |
+^ 50 GeV, $10^{-47} \mathrm{cm}^{2}$ WIMP | 0.72 $\pm$ 0.07 | 0.33 $\pm$ 0.03 | 0.00 | 0.00 | 0.02 |  
+</tabcaption> \\
+
+<tabcaption sr1_1t_postfit|SR1 (R < 35 cm, 900 kg)>
+^ R<35 cm ^ total ^ NR band (-2 sigma, median) ^ cS1 in (3,20), < NR -4.5 sigma ^ cS1 in (20,70), < NR -4.5 sigma ^ NR (-4.5 sigma, -2 sigma) ^ 
+^ Electronic recoils | 396 $\pm$ 47 | 1.00 $\pm$ 0.12 | 0.00 | 0.00 | 0.01 |
+^ Radiogenic neutrons | 0.75 $\pm$ 0.4 | 0.39 $\pm$ 0.19 | 0.00 | 0.00 | 0.05 $\pm$ 0.02 |
+^ CNNS | 0.04 $\pm$ 0.01 | 0.02 $\pm$ 0.01 | 0.00 | 0.00 | 0.02 $\pm$ 0.01 |
+^ AC | 0.26 $\pm$ 0.10 | 0.05 $\pm$ 0.02 | 0.01 | 0.04 $\pm$ 0.02 | 0.11 $\pm$ 0.05 |
+^ Wall leakage | 0.52 $\pm$ 0.03 | 0.03 | 0.01 | 0.30 $\pm$ 0.02 | 0.18 $\pm$ 0.01 |
+^ Total background | 397.1 $\pm$ 47 | 1.48 $\pm$ 0.2 | 0.02 | 0.34 $\pm$ 0.02 | 0.36 $\pm$ 0.05 |
+^ 50 GeV, $10^{-47} \mathrm{cm}^{2}$ WIMP | 0.51 $\pm$ 0.05 | 0.24 $\pm$ 0.02 | 0.00 | 0.00 | 0.01 |  
+</tabcaption>
+
+<tabcaption sr1_1t_postfit|SR1 (R < 0 cm, core mass)>
+^ R<0 cm ^ total ^ NR band (-2 sigma, median) ^ cS1 in (3,20), < NR -4.5 sigma ^ cS1 in (20,70), < NR -4.5 sigma ^ NR (-4.5 sigma, -2 sigma) ^ 
+^ Electronic recoils | 274 $\pm$ 33 | 0.56 $\pm$ 0.07 | 0.00 | 0.00 | 0.00 |
+^ Radiogenic neutrons | 0.25 $\pm$ 0.12 | 0.13 $\pm$ 0.06 | 0.00 | 0.00 | 0.02 $\pm$ 0.01 |
+^ CNNS | 0.02 $\pm$ 0.01 | 0.01 | 0.00 | 0.00 | 0.01 |
+^ AC | 0.19 $\pm$ 0.07 | 0.04 $\pm$ 0.01 | 0.01 | 0.03 $\pm$ 0.01 | 0.09 $\pm$ 0.04 |
+^ Wall leakage | 0.22 $\pm$ 0.01 | 0.01 | 0.00 | 0.13 $\pm$ 0.01 | 0.07 |
+^ Total background | 274.2 $\pm$ 33 | 0.75 $\pm$ 0.09 | 0.01 | 0.16 $\pm$ 0.01 | 0.20 $\pm$ 0.04 |
+^ 50 GeV, $10^{-47} \mathrm{cm}^{2}$ WIMP | 0.35 $\pm$ 0.04 | 0.16 $\pm$ 0.02 | 0.00 | 0.00 | 0.01 |  
+</tabcaption>

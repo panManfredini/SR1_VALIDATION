@@ -3,8 +3,6 @@
     gStyle->SetOptStat(0);
     
     errorHandler::globalPrintLevel = 1;
-    gInterpreter->AddIncludePath("../Xephyr/src"); // in this case is just XEPHYR src from next dir.
-    gROOT->ProcessLine(".L ../SR1/StatisticalAnalyses/xephyr_sr1_likelihood/src/likelihoodDef.cxx");
 
 
       pdfLikelihood *likeHood = getDMLikelihood(50., 0);
@@ -13,8 +11,8 @@
 
 
     likeHood->printEventSummary();
-    double ll = likeHood->maximize(false);
-    likeHood->printEventSummary();
+//    double ll = likeHood->maximize(false);
+    likeHood->printEventSummary(true);
 
     cout << " sig multipl. :  " << likeHood->getSignalMultiplier() << endl;
 

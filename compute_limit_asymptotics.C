@@ -4,14 +4,13 @@
     gStyle->SetOptStat(0);
     
     errorHandler::globalPrintLevel = 1;
-    gInterpreter->AddIncludePath("../Xephyr/src"); // in this case is just XEPHYR src from next dir.
-    gROOT->ProcessLine(".L ../SR1/StatisticalAnalyses/xephyr_sr1_likelihood/src/likelihoodDef.cxx");
 
 
-    pdfLikelihood *likeHood = getDMLikelihood(50., 0);
+//    pdfLikelihood *likeHood = getDMLikelihood(50., 0);
+    CombinedProfileLikelihood* likeHood = getDMCombinedLikelihood(50.);
 
     likeHood->printEventSummary();
-
+/*
     likeHood->getBkgComponent("acbg_yx_r0_f")->getScaleSys("ACscale0")->setCurrentValue(-1.);
     likeHood->getBkgComponent("acbg_yx_r0_f")->getScaleSys("ACscale0")->setType(FREE_PARAMETER);
     likeHood->getBkgComponent("hmc_extruded_yx_r0_f")->getScaleSys("CNNSscale0")->setCurrentValue(-1.);
@@ -24,16 +23,17 @@
     likeHood->getBkgComponent("hbkg_Eth_0.00")->getShapeSys("_rf0_")->setType(FIXED_PARAMETER);
     likeHood->getBkgComponent("hbkg_Eth_0.00")->getShapeSys("_py0_")->setCurrentValue(0.);
     likeHood->getBkgComponent("hbkg_Eth_0.00")->getShapeSys("_py0_")->setType(FIXED_PARAMETER);
-
-    likeHood->maximize(false);
+*/
+  
+   likeHood->maximize(false);
 
     likeHood->printEventSummary();
 
-/*    AsymptoticExclusion ae (likeHood, 0.05); // 95% CL comparison with Knut
+    AsymptoticExclusion ae (likeHood, 0.05); // 95% CL comparison with Knut
    
     ae.computeLimits();
     ae.writeToFile("OBSERVED_LIMIT/ASYMPTOTICS/asy_");
-*/
+
 
 
 }

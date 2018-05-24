@@ -1,0 +1,31 @@
+
+
+Production of Toys:
+- egg_neutron_x final
+- ER February
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% EGG %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+branch: lax_1.5.1_egg_neutronX
+commit 25c3d46926eafdaee151e63c1d3e33d585352919 
+Author: Patrick de Perio <pdeperio@gmail.com>
+Date:   Fri Apr 6 12:18:53 2018 -0400
+
+    Derived nX-only template with updated acceptance
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% NORMAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+mod - benchmark (reactivating safeguard). Branch:origin/neutronX
+commit 7de087abcdc25522a866b327be58aab86e832937
+Author: Ale <pan.manfredini@gmail.com>
+Date:   Tue Apr 10 17:12:12 2018 +0300
+
+    small mod. to fix safeguard
+
+
+
+%%%%%%%%%%%%%%%%%%%% Caveat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+- Using NeutronX sample sum in "normal" and divided in "egg"
+- Unceratinty for CNNS inflated in "normal"
+- Calibration sample is re-generated for "normal" and this kills a bit the "fitting same samples" idea for q_stat distros. It will hold instead for limits.

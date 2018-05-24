@@ -6,9 +6,9 @@ void extract_limits(TString LimitFilePath, TString ObservedLimitFilePath){
 	TFile *f_obs = TFile::Open(ObservedLimitFilePath);
 	TTree *obs_limits = (TTree*)f_obs->Get("limit_tree");
 
-	const int n_masses = 4;
+	const int n_masses = 3;
 //	double mass_list[n_masses] = { 50.};
-	double mass_list[n_masses] = {6., 10., 50., 200.};
+	double mass_list[n_masses] = {6., 10., 50.};//, 200.};
 
 
 	// extract observed limit to graph 
@@ -43,7 +43,7 @@ void extract_limits(TString LimitFilePath, TString ObservedLimitFilePath){
 	}
 
 
-	TFile fout("OBSERVED_LIMIT/egg/obs_limit_graph.root","RECREATE");
+	TFile fout("OBSERVED_LIMIT/apr_ER2_RG2_W2/obs_limit_graph.root","RECREATE");
 	
 	fout.cd();
 	obs_lim.Write("g_observed_limit");

@@ -1,12 +1,16 @@
 {
 
 TFile *f_exp = TFile::Open("LIMITS/expected_discovery.root");
-TFile *f_obs = TFile::Open("OBSERVED_LIMIT/obs_limit_graph.root");
+//TFile *f_obs = TFile::Open("OBSERVED_LIMIT/obs_limit_graph.root");
+TFile *f_obs = TFile::Open("OBSERVED_LIMIT/apr_ER2_RG2_W2/obs_limit_graph.root");
 
 TGraph *pval_obs = (TGraph*)f_obs->Get("g_observed_pval");
 TGraphAsymmErrors *pval_exp = (TGraphAsymmErrors*)f_exp->Get("expected_discovery_pval");
 TGraphAsymmErrors *pval_exp_line = (TGraphAsymmErrors*)pval_exp->Clone("line");
 
+// adding the 200 GeV Remove me!
+//x[3]=200, y[3]=0.376656
+pval_obs->SetPoint(3, 200, 0.376656);
 
 TColor *col26 = gROOT->GetColor(428);
 col26->SetAlpha(0.01);
@@ -28,7 +32,7 @@ pval_obs->SetMarkerStyle(20);
 pval_obs->SetMarkerSize(1);
 
 pval_exp->SetTitle("");
-pval_exp->GetYaxis()->SetTitle("p_val null Hypo");
+pval_exp->GetYaxis()->SetTitle("local p_val null Hypo");
 pval_exp->GetXaxis()->SetTitle("M  [GeV]");
 pval_exp->GetXaxis()->SetLimits(5.,500.);
 pval_exp->GetYaxis()->SetLimits(1E-5,1.);
