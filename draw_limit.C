@@ -34,6 +34,7 @@ TGraphAsymmErrors* Exp_limits = (TGraphAsymmErrors*)Exp_limitsS1->Clone("expecte
 
 //TGraph *LUX_limit    = (TGraph*)    fno->Get("observedLimitNoCLs"); 
 //TGraph *LUX_limit    = new TGraph("LUX_full_exp_attempt.limit.txt");
+TGraph *SR1_public_limit    = new TGraph("uls.csv");
 TGraphAsymmErrors *sr0 = new TGraphAsymmErrors("x1t_firstdata_result.csv");
 
 //sr0->SetFillColorAlpha(3,0.7);
@@ -43,6 +44,12 @@ sr0->SetMarkerColor(1);
 sr0->SetLineWidth(3);
 sr0->SetLineStyle(7);
 sr0->SetMarkerSize(0);
+
+SR1_public_limit->SetLineColor(4);
+SR1_public_limit->SetMarkerColor(4);
+SR1_public_limit->SetLineWidth(3);
+SR1_public_limit->SetLineStyle(7);
+SR1_public_limit->SetMarkerSize(0);
 
 TCanvas *c1 = new TCanvas("limits", "limit", 600, 600);
 
@@ -99,6 +106,7 @@ Exp_limits->Draw("samePX");
 Obs_limit->Draw("sameP");
 //Obs_limit->Draw("PL");
 sr0->Draw("sameLX");
+SR1_public_limit->Draw("sameLX");
 
 
 TLegend* lego = new TLegend(0.2,0.9,0.5,0.7);
@@ -112,6 +120,7 @@ TLegend* lego = new TLegend(0.2,0.9,0.5,0.7);
   lego->AddEntry(Exp_limitsS2,"2 #sigma","f");
   //lego->AddEntry(sr0,"No Safeguard");
   lego->AddEntry(sr0,"SR0");
+  lego->AddEntry(SR1_public_limit,"SR1+SR0 Published");
   lego->Draw();
 
 

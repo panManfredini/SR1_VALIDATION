@@ -1,6 +1,7 @@
 {
 
-    gStyle->SetOptStat(0);
+
+gStyle->SetOptStat(0);
     
     errorHandler::globalPrintLevel = 1;
 
